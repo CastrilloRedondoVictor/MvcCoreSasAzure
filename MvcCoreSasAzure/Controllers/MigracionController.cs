@@ -21,7 +21,7 @@ namespace MvcCoreSasAzure.Controllers
         [HttpPost]
         public async Task<IActionResult> Index(string accion)
         {
-            string azureKeys = "AccountName=devstoreaccount1;AccountKey=Eby8vdM02xNOcqFlqUwJPLlmEtlCDXJ1OUzFT50uSRZ6IFsuFq2UVErCz4I6tq/K1SZFPTOtr/KBHBeksoGMGw==;DefaultEndpointsProtocol=http;BlobEndpoint=http://127.0.0.1:10000/devstoreaccount1;QueueEndpoint=http://127.0.0.1:10001/devstoreaccount1;TableEndpoint=http://127.0.0.1:10002/devstoreaccount1;";
+            string azureKeys = "DefaultEndpointsProtocol=https;AccountName=storagetajamarvcr;AccountKey=HUvi/0yah8KpfydLnSfM+MHF8PfpVdwGJUJcsPOY3RR0xLYgD/PD2o3GBNPlLJPNGhzm69Mfq0Cp+ASt4fpzqg==;EndpointSuffix=core.windows.net";
             TableServiceClient tableServiceClient = new TableServiceClient(azureKeys);
             TableClient tableClient = tableServiceClient.GetTableClient("alumnos");
             await tableClient.CreateIfNotExistsAsync();
